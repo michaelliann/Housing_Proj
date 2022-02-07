@@ -3,7 +3,6 @@ export enum RoomType {
   Guest = 'Guest Bedroom',
   Den = 'Den',
   Living = 'Living Room',
-  Other = 'Other',
 }
 
 export const roomTypes = Object.values(RoomType);

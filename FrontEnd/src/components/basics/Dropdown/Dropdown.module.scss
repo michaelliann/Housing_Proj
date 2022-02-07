@@ -126,7 +126,12 @@
     .dropdown {
       flex-grow: 1;
 
-      .dropdownMenu {
+      div.dropdownMenu {
+        &[x-placement="top-start"] {
+          // Always shows the menu below the button. Has to use important to override.
+          // This won't resolve in a conflict since we are overriding Bootstrap behavior.
+          transform: translate3d(0px, 100%, 0px) !important;
+        }
         width: 100%;
         min-width: 7.75rem;
         max-height: 12.5rem;
