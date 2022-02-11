@@ -50,6 +50,7 @@ const HomehubWelcomeInfo: FunctionComponent = () => {
 
 const HomePageCard: FunctionComponent = () => {
   const router = useRouter();
+  const { data: user } = useUser();
 
   return (
     <Row className={styles.homePageCardRow}>
@@ -68,7 +69,9 @@ const HomePageCard: FunctionComponent = () => {
                 find you ASAP
               </div>
             </div>
-            <Button>Post it Now</Button>
+            <Button>
+              {user.isLoggedIn ? 'Post it now' : 'Log in to post'}
+            </Button>
           </div>
         </div>
       </Col>
@@ -142,9 +145,8 @@ const PostYourPlace: FunctionComponent = () => {
       >
         <div
           className={cn(styles.postStepLargeScreenDescription, {
-            [styles.postStepLargeScreenDescriptionActive]: isCurrentStep(
-              stepNumber,
-            ),
+            [styles.postStepLargeScreenDescriptionActive]:
+              isCurrentStep(stepNumber),
           })}
         >
           <span
@@ -194,9 +196,8 @@ const LogIn: FunctionComponent = () => {
   const dispatch = useDispatch();
   const [loginMoved, setLoginMoved] = useState(false);
   const [logInCol, setlogInCol] = useState(7);
-  const [windowHeight, elementDistanceToTop] = useViewPortDistance(
-    '#loginFrame',
-  );
+  const [windowHeight, elementDistanceToTop] =
+    useViewPortDistance('#loginFrame');
 
   useEffect(() => {
     if (user.isLoggedIn) {
