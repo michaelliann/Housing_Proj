@@ -8,7 +8,11 @@ import { HouseCardLandLord, HouseCardStudent } from './HouseCard';
 import styles from './HouseCardList.module.scss';
 
 export type PostingType = 'landlord' | 'student';
+interface BrowsingListProps {
+  numListingsShown?: number;
+}
 
+export type displayType = 'layout' | 'all';
 interface HouseCardListUIProps {
   roomIds: number[];
   postType: PostingType;
@@ -33,7 +37,9 @@ const HouseCardListUI: FunctionComponent<HouseCardListUIProps> = ({
   );
 };
 
-export const BrowsingLandlordList: FunctionComponent = () => {
+export const BrowsingLandlordList: FunctionComponent<BrowsingListProps> = ({
+  numListingsShown,
+}) => {
   const { data: roomIds, error } = useLandlordRoomIds();
   if (error) {
     return <div>Error occurred. Please reload the page.</div>; // TODO use a popup instead...
@@ -43,10 +49,17 @@ export const BrowsingLandlordList: FunctionComponent = () => {
     return <img className="w-100 h-100" src={loading} alt="loading..." />;
   }
 
-  return <HouseCardListUI roomIds={roomIds} postType="landlord" />;
+  return (
+    <HouseCardListUI
+      roomIds={numListingsShown ? roomIds.slice(0, numListingsShown) : roomIds}
+      postType="landlord"
+    />
+  );
 };
 
-export const BrowsingStudentList: FunctionComponent = () => {
+export const BrowsingStudentList: FunctionComponent<BrowsingListProps> = ({
+  numListingsShown,
+}) => {
   const { data: roomIds, error } = useStudentRoomIds();
   if (error) {
     return <div>Error occurred. Please reload the page.</div>; // TODO use a popup instead...
@@ -56,21 +69,27 @@ export const BrowsingStudentList: FunctionComponent = () => {
     return <img className="w-100 h-100" src={loading} alt="loading..." />;
   }
 
-  return <HouseCardListUI roomIds={roomIds} postType="student" />;
+  return (
+    <HouseCardListUI
+      roomIds={numListingsShown ? roomIds.slice(0, numListingsShown) : roomIds}
+      postType="student"
+    />
+  );
 };
 
-const HouseCardList: FunctionComponent<{ postType: PostingType }> = ({
-  postType,
-}) => {
+const BrowsingList: FunctionComponent<{
+  postType: PostingType;
+  numListingsShown?: number;
+}> = ({ postType, numListingsShown }) => {
   return (
     <>
       {postType === 'student' ? (
-        <BrowsingStudentList />
+        <BrowsingStudentList numListingsShown={numListingsShown} />
       ) : (
-        <BrowsingLandlordList />
+        <BrowsingLandlordList numListingsShown={numListingsShown} />
       )}
     </>
   );
 };
 
-export default HouseCardList;
+export default BrowsingList;
