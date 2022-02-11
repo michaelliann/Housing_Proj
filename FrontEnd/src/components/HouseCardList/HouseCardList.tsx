@@ -59,7 +59,7 @@ export const BrowsingStudentList: FunctionComponent = () => {
   return <HouseCardListUI roomIds={roomIds} postType="student" />;
 };
 
-const BrowsingList: FunctionComponent<{ postType: PostingType }> = ({
+const HouseCardList: FunctionComponent<{ postType: PostingType }> = ({
   postType,
 }) => {
   return (
@@ -73,4 +73,4 @@ const BrowsingList: FunctionComponent<{ postType: PostingType }> = ({
   );
 };
 
-export default BrowsingList;
+export default HouseCardList;
