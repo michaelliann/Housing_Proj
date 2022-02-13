@@ -409,7 +409,7 @@ div.ourMissonWrapper {
 
   padding: 2rem;
 
-  transition: all 3s;
+  transition: all 2s;
 
   &Moved {
     top: 50%;
@@ -466,14 +466,16 @@ div.ourMissonWrapper {
     &::-webkit-scrollbar {
       visibility: hidden;
       display: block;
-      width: 1px;
-      height: 5px;
-      background-color: #aaa;
+      height: 12px;
+      border-radius: 50px;
+      background-color: $border-color;
     }
 
     &::-webkit-scrollbar-thumb {
       visibility: hidden;
-      background: #000;
+      background: $primary-300-color;
+      width: auto;
+      border-radius: 50px;
     }
 
     &:hover {
