@@ -50,6 +50,7 @@ const HomehubWelcomeInfo: FunctionComponent = () => {
 
 const HomePageCard: FunctionComponent = () => {
   const router = useRouter();
+  const { data: user } = useUser();
 
   return (
     <Row className={styles.homePageCardRow}>
@@ -68,7 +69,9 @@ const HomePageCard: FunctionComponent = () => {
                 find you ASAP
               </div>
             </div>
-            <Button>Post it Now</Button>
+            <Button>
+              {user.isLoggedIn ? 'Post it now' : 'Log in to post'}
+            </Button>
           </div>
         </div>
       </Col>
