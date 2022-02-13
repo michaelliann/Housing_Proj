@@ -145,8 +145,9 @@ const PostYourPlace: FunctionComponent = () => {
       >
         <div
           className={cn(styles.postStepLargeScreenDescription, {
-            [styles.postStepLargeScreenDescriptionActive]:
-              isCurrentStep(stepNumber),
+            [styles.postStepLargeScreenDescriptionActive]: isCurrentStep(
+              stepNumber,
+            ),
           })}
         >
           <span
@@ -196,8 +197,9 @@ const LogIn: FunctionComponent = () => {
   const dispatch = useDispatch();
   const [loginMoved, setLoginMoved] = useState(false);
   const [logInCol, setlogInCol] = useState(7);
-  const [windowHeight, elementDistanceToTop] =
-    useViewPortDistance('#loginFrame');
+  const [windowHeight, elementDistanceToTop] = useViewPortDistance(
+    '#loginFrame',
+  );
 
   useEffect(() => {
     if (user.isLoggedIn) {
