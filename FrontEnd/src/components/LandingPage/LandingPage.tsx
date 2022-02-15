@@ -290,7 +290,10 @@ const BrowseListing: FunctionComponent = () => {
       <Row className={styles.findWrapper}></Row>
       <div>
         <div className={styles.houseCardWrapper}>
-          <HouseCardList postType={showPostType}></HouseCardList>
+          <HouseCardList
+            postType={showPostType}
+            numListingsShown={5}
+          ></HouseCardList>
         </div>
         <div className={cn(styles.center, styles.exploreButton)}>
           <Button onClick={() => router.push('/housing')}>
@@ -343,6 +346,8 @@ const Landing: FunctionComponent = () => {
         <HomePageCard />
 
         <PostYourPlace />
+
+        <BrowseListing />
 
         <LogIn />
 
