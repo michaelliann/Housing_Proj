@@ -1,5 +1,5 @@
 .schoolYearToggle {
-  justify-content: left !important;
+  justify-content: center !important;
   padding-left: 0 !important;
 }
 
@@ -7,4 +7,51 @@
   textarea {
     height: 19.0625rem !important;
   }
+}
+
+.nameAsk {
+  position: relative;
+  align-self: center;
+  margin-top: 8%;
+  padding-bottom: 151px;
+  color: $primary-400-color;
+
+  @include font-type('subtitle 1');
+}
+.nameAskEducation {
+  align-self: center;
+  margin-top: 5%;
+  color: $primary-400-color;
+  padding-bottom: 20px;
+  @include font-type('subtitle 1');
+}
+.disclaimer {
+  align-self: center;
+  @include font-type('subtitle 1');
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.phoneDisclaimer {
+  position: absolute;
+  left: 130px;
+  margin-left: -10%;
+  @include font-type('subtitle 1');
+  font-size: 16px;
+  padding-bottom: 20px;
+  width: 435px;
+  padding-bottom: 100px;
+}
+.phoneInput {
+  position: absolute;
+  align-items: center;
+  height: 60px;
+  width: 250px;
+  left: 90px;
+  top: 288px;
+}
+.nameInput {
+  position: absolute;
+  align-items: center;
+  height: 60px;
+  width: 500px;
 }
