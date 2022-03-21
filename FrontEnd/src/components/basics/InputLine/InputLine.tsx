@@ -13,13 +13,7 @@ export interface InputLineProps
     > {
   label?: string;
   labelClassName?: string;
-  /**
-       
-      error?: string | z.ZodIssue;
-      errorClassName?: string;
-            rows?: number;
-      icon?: IconType; 
-      */
+
   inlinePostText?: string;
   postTextClassName?: string;
 }
@@ -49,7 +43,20 @@ const InputLine: FunctionComponent<InputLineProps> = ({
 
         <div className={cn('d-flex', styles.inputRow)}>
           This is a test to render
-          
+          <Form.Control
+            {...formControlProps}
+            value={value}
+            className={cn(className, {
+              [styles.unfilled]: isEmpty && !readOnly,
+              [styles.filled]: !isEmpty || readOnly,
+            })}
+            isValid={!readOnly && isValid}
+            readOnly={readOnly}
+            onChange={(e) => {
+              setIsEmpty(!e.target.value || e.target.value === '');
+              if (onChange) onChange(e);
+            }}
+          />
         </div>
       </Form.Group>
     </div>
