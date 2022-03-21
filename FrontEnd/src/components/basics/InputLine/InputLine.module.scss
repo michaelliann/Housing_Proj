@@ -1,0 +1,33 @@
+.root{
+    & > div {
+        margin-bottom: 0;
+    }
+
+    .unfilled {
+        height: 3rem;
+        padding: auto;
+        @include font-type('body 2');
+        box-shadow: none !important; // TODO set the flag in bootstrap instead of doing this
+        background-color: white !important;
+        &::placeholder {
+          color: $disabled-low-emphasis-color;
+        }
+        &:focus {
+          @include font-type('body 2');
+          
+          &,
+          &::placeholder {
+            color: $black-color;
+          }
+        }
+    }
+    .filled {
+        @extend .unfilled;
+        //just for testing purposes to show it is filled
+        background-color: $background-blur-dark;
+    }
+}
+
+.inputRow {
+    position: relative;
+  }

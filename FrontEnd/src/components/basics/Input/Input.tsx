@@ -8,18 +8,19 @@ import { Icon as IconType, miscIcons } from '@icons';
 
 export interface InputProps
   extends FormControlProps,
+    // Omits the default onChange method from the React HTML element that this extends.
     Omit<
       React.HTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
       'onChange'
     > {
   label?: string;
   labelClassName?: string;
-  error?: string | z.ZodIssue; // Will make the input border red as well
+  error?: string | z.ZodIssue;
   errorClassName?: string;
   inlinePostText?: string;
   postTextClassName?: string;
   required?: boolean;
-  rows?: number; // TODO should be in the html attributes of htmltextareaelement???
+  rows?: number;
   icon?: IconType;
 }
 

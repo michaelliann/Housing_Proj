@@ -4,7 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import * as z from 'zod';
 import { SchoolYear, NON_EMPTY_ERR_MSG, majors, phoneRegex } from '@constants';
-import { WizardFormStep, Input, Dropdown, ToggleGroup } from '@basics';
+import {
+  WizardFormStep,
+  Input,
+  Dropdown,
+  ToggleGroup,
+  InputLine,
+} from '@basics';
 import styles from './NewUserSetup.module.scss';
 
 export const namePageSchema = z.object({
@@ -36,6 +42,18 @@ const NamePage: FunctionComponent<WizardFormStep<NamePageStore>> = ({
             placeholder="Name"
             isValid={validations?.name?.success}
             error={validations?.name?.error}
+          />
+        </Col>
+
+        <Col md={12} className="mb-4">
+          <InputLine
+            className={styles.nameInput}
+            type="text"
+            value={name}
+            onChange={(e) => setStore({ name: e.target.value })}
+            placeholder="Name"
+            isValid={validations?.name?.success}
+            
           />
         </Col>
       </Row>
