@@ -28,16 +28,20 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
   return (
     <Container>
       <Row className="justify-content-center m-2">
-        <Col sm={12} md={6}>
-          <div className={styles.nameAskEducation}>What’s your phone?</div>
+        <Col sm={12} md={12}>
+          <div className={styles.phoneAsk}>What’s your phone?</div>
         </Col>
-        <Col lg={12} md={6}>
+      </Row>
+      <Row>
+        <Col sm={12} md={6}>
           <div className={styles.phoneDisclaimer}>
             Just like you, ONLY people logged in with their UCSD emails will be
             able to see the contact info
           </div>
         </Col>
-        <Col md={12}>
+      </Row>
+      <Row>
+        <Col md={12} className="mb-4">
           <Input
             className={styles.phoneInput}
             label=""
