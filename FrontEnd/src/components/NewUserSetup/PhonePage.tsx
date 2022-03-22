@@ -4,8 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import * as z from 'zod';
 import { SchoolYear, NON_EMPTY_ERR_MSG, majors, phoneRegex } from '@constants';
-import { WizardFormStep, Input, Dropdown, ToggleGroup } from '@basics';
+import { WizardFormStep, Input, Dropdown, ToggleGroup, Tooltip } from '@basics';
 import styles from './NewUserSetup.module.scss';
+import { miscIcons } from '@icons';
 
 export const phonePageSchema = z.object({
   phone: z
@@ -35,6 +36,9 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
       <Row>
         <Col sm={12} md={6}>
           <div className={styles.phoneDisclaimer}>
+            <div className={styles.infoIcon}>
+              <miscIcons.infoCircle />
+            </div>
             Just like you, ONLY people logged in with their UCSD emails will be
             able to see the contact info
           </div>
