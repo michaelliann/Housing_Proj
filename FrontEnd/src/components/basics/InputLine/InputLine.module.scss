@@ -9,11 +9,11 @@
     height: 3rem;
     padding-left: 2.75rem;
     @include font-type('body 2');
-    box-shadow: none !important; // TODO set the flag in bootstrap instead of doing this
+
     border: none;
+
+    border-bottom: solid 3px black;
     outline: none;
-    border-bottom: solid 3px;
-    border-bottom-color: black;
 
     background-color: white !important;
     &::placeholder {
@@ -40,7 +40,7 @@
     background-image: none !important; // used to override bootstrap-provided valid checkmark
   }
   .invalid {
-    border: 3px solid $error-color !important;
+    border-bottom: 3px solid $error-color !important;
     color: $error-color !important;
   }
 
