@@ -31,6 +31,11 @@
   font-size: 20px;
   padding-bottom: 20px;
 }
+
+.phoneContainer {
+  background-color: F8E6D8;
+}
+
 .phoneDisclaimer {
   position: absolute;
   left: 130px;
@@ -40,14 +45,25 @@
   padding-bottom: 20px;
   width: 435px;
   padding-bottom: 100px;
+  text-align: center;
 }
+
+.phoneAsk {
+  text-align: center;
+  margin-top: 5%;
+  color: $primary-400-color;
+  padding-bottom: 20px;
+  @include font-type('subtitle 1');
+}
+
 .phoneInput {
   position: absolute;
+  text-align: center;
   align-items: center;
   height: 60px;
-  width: 250px;
-  left: 90px;
-  top: 288px;
+  width: 500px;
+  left: 60px;
+  top: 190px;
 }
 .nameInput {
   position: absolute;
