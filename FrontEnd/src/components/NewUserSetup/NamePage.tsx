@@ -33,19 +33,7 @@ const NamePage: FunctionComponent<WizardFormStep<NamePageStore>> = ({
       <Row className="row justify-content-md-center m-2">
         <div className={styles.nameAsk}>What's Your Name?</div>
 
-        <Col md={12} className="mb-4">
-          <Input
-            className={styles.nameInput}
-            type="text"
-            value={name}
-            onChange={(e) => setStore({ name: e.target.value })}
-            placeholder="Name"
-            isValid={validations?.name?.success}
-            error={validations?.name?.error}
-          />
-        </Col>
-
-        <Col md={12} className="mb-4">
+        <Col md={12} className="mb-3">
           <InputLine
             className={styles.nameInput}
             type="text"
@@ -53,7 +41,7 @@ const NamePage: FunctionComponent<WizardFormStep<NamePageStore>> = ({
             onChange={(e) => setStore({ name: e.target.value })}
             placeholder="Name"
             isValid={validations?.name?.success}
-            
+            error={validations?.name?.error}
           />
         </Col>
       </Row>
