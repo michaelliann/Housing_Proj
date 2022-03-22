@@ -1,8 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Page1, { Page1Store, page1InitialStore, page1Schema } from './Page1';
 import Page2, { Page2Store, page2InitialStore, page2Schema } from './Page2';
 // Test NamePage
+import styles from './NewUserSetup.module.scss';
 import NamePage, {
   NamePageStore,
   namePageInitialStore,
@@ -45,13 +46,14 @@ const NewUserSetup: FunctionComponent = () => {
   const showNewUserPopup = useShowNewUserPopup();
   const shouldShowLogin = useShouldShowLogin();
   const { createUser } = useUser();
+  const [showQuit, setShowQuit] = useState(false);
 
   if (!showNewUserPopup) return null;
 
   return (
     <WizardForm<Store>
       show={!!showNewUserPopup && !shouldShowLogin}
-      onHide={() => console.log('todo, shouldnt have an onHide for this...')}
+      onHide={() => dispatch(endNewUserFlow())}
       onSubmit={(data) => {
         console.log('clicked, set up new user');
         console.log(data);
