@@ -27,7 +27,7 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
 }) => {
   return (
     <Container>
-      <Row className="justify-content-center m-2">
+      <Row className="row justify-content-md-center m-2">
         <Col sm={12} md={12}>
           <div className={styles.phoneAsk}>What’s your phone?</div>
         </Col>
@@ -41,7 +41,7 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
         </Col>
       </Row>
       <Row>
-        <Col md={12} className="mb-4">
+        <Col sm={12} md={10}>
           <Input
             className={styles.phoneInput}
             label=""
