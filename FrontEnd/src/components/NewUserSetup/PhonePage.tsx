@@ -4,7 +4,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import * as z from 'zod';
 import { SchoolYear, NON_EMPTY_ERR_MSG, majors, phoneRegex } from '@constants';
-import { WizardFormStep, Input, Dropdown, ToggleGroup, Tooltip } from '@basics';
+import {
+  WizardFormStep,
+  InputLine,
+  Dropdown,
+  ToggleGroup,
+  Tooltip,
+} from '@basics';
 import styles from './NewUserSetup.module.scss';
 import { miscIcons } from '@icons';
 
@@ -46,7 +52,7 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
       </Row>
       <Row>
         <Col sm={12} md={10}>
-          <Input
+          <InputLine
             className={styles.phoneInput}
             label=""
             type="text"
