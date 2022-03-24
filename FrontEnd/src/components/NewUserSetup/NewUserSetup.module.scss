@@ -56,24 +56,12 @@
   @include font-type('subtitle 1');
 }
 .phoneWrapper {
+  padding-left: 100px;
   margin-top: 190px;
-  position: relative;
-  margin-left: 60px;
+
+  position: absolute;
   height: 60px;
-  width: 600px;
-<<<<<<< HEAD
-}
-
-.phoneInput {
-=======
-  
-}
-
-.phoneInput {
-
-
-  
->>>>>>> e7f47b16 (fixed bugs)
+  width: 650px;
 }
 
 .nameInput {
