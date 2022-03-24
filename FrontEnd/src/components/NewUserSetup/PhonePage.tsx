@@ -54,6 +54,7 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
         <Col sm={12} md={10}>
           <InputLine
             className={styles.phoneInput}
+            icon={{ icon: miscIcons.phoneIcon }}
             label=""
             type="text"
             value={phone}
