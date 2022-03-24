@@ -89,8 +89,7 @@ const NewUserSetup: FunctionComponent = () => {
       <NamePage />
       <EducationPage />
       <PhonePage />
-      <Page1 />
-      <Page2 />
+
     </WizardForm>
   );
 };

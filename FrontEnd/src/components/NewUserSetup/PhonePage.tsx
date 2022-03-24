@@ -50,7 +50,7 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
           </div>
         </Col>
       </Row>
-      <Row>
+      <Row className={styles.phoneWrapper}>
         <Col sm={12} md={10}>
           <InputLine
             className={styles.phoneInput}
