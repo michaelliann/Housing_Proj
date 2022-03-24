@@ -12,9 +12,9 @@
 
     border: none;
 
-    border-bottom: solid 3px black;
+    border-bottom: solid 4px #edb096;
     outline: none;
-
+    border-radius: 0;
     background-color: white !important;
     &::placeholder {
       color: $disabled-low-emphasis-color;
