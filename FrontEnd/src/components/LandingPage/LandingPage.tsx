@@ -16,7 +16,7 @@ import Typewriter from 'typewriter-effect';
 import styles from './LandingPage.module.scss';
 import { useUser, useViewPortDistance } from '@hooks';
 import { useDispatch } from 'react-redux';
-import { showLogin, useShowPostType } from '@redux';
+import { showLogin, useShowPostType, showPost } from '@redux';
 import { BrowsingStudentList, HouseCardList } from '@components';
 
 const HomehubWelcomeInfo: FunctionComponent = () => {
@@ -51,6 +51,7 @@ const HomehubWelcomeInfo: FunctionComponent = () => {
 const HomePageCard: FunctionComponent = () => {
   const router = useRouter();
   const { data: user } = useUser();
+  const dispatch = useDispatch();
 
   return (
     <Row className={styles.homePageCardRow}>
@@ -69,7 +70,11 @@ const HomePageCard: FunctionComponent = () => {
                 find you ASAP
               </div>
             </div>
-            <Button>
+            <Button
+              onClick={() => {
+                user.isLoggedIn ? dispatch(showPost()) : dispatch(showLogin());
+              }}
+            >
               {user.isLoggedIn ? 'Post it now' : 'Log in to post'}
             </Button>
           </div>
@@ -145,9 +150,8 @@ const PostYourPlace: FunctionComponent = () => {
       >
         <div
           className={cn(styles.postStepLargeScreenDescription, {
-            [styles.postStepLargeScreenDescriptionActive]: isCurrentStep(
-              stepNumber,
-            ),
+            [styles.postStepLargeScreenDescriptionActive]:
+              isCurrentStep(stepNumber),
           })}
         >
           <span
@@ -197,9 +201,8 @@ const LogIn: FunctionComponent = () => {
   const dispatch = useDispatch();
   const [loginMoved, setLoginMoved] = useState(false);
   const [logInCol, setlogInCol] = useState(7);
-  const [windowHeight, elementDistanceToTop] = useViewPortDistance(
-    '#loginFrame',
-  );
+  const [windowHeight, elementDistanceToTop] =
+    useViewPortDistance('#loginFrame');
 
   useEffect(() => {
     if (user.isLoggedIn) {

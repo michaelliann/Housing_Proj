@@ -4,6 +4,7 @@ import React, { FunctionComponent } from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+
 import { HouseCardLandLord, HouseCardStudent } from './HouseCard';
 import styles from './HouseCardList.module.scss';
 
@@ -28,7 +29,9 @@ const HouseCardListUI: FunctionComponent<HouseCardListUIProps> = ({
     <Container fluid className="px-md-0">
       <Row className={styles.cardRow}>
         {roomIds.map((roomId) => (
-          <Col xs={12} lg={6} className="cardColumn">
+
+          <Col xs={12} lg={6} className={styles.cardColumn}>
+
             <HouseCard roomId={roomId} />
           </Col>
         ))}
@@ -77,7 +80,10 @@ export const BrowsingStudentList: FunctionComponent<BrowsingListProps> = ({
   );
 };
 
+
 const BrowsingList: FunctionComponent<{
+
+
   postType: PostingType;
   numListingsShown?: number;
 }> = ({ postType, numListingsShown }) => {

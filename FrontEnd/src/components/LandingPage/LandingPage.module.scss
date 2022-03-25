@@ -456,9 +456,12 @@ div.ourMissonWrapper {
 
 .exploreButton {
   padding: 3rem 0 8rem 0;
+  text-align: center;
 }
 
 .houseCardWrapper {
+  margin-left: 80px;
+  margin-right: 80px;
   & > div {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -488,6 +491,17 @@ div.ourMissonWrapper {
     & > div {
       flex-wrap: unset;
       margin-bottom: 0;
+
+
+      & > div:nth-child(even) {
+        margin-left: -2rem;
+      }
+
+      & > div {
+        margin-right: 1rem;
+        margin-bottom: 0;
+      }
+
     }
   }
 }
