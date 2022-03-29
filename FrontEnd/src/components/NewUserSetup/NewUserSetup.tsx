@@ -1,7 +1,24 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Page1, { Page1Store, page1InitialStore, page1Schema } from './Page1';
 import Page2, { Page2Store, page2InitialStore, page2Schema } from './Page2';
+// Test NamePage
+import styles from './NewUserSetup.module.scss';
+import NamePage, {
+  NamePageStore,
+  namePageInitialStore,
+  namePageSchema,
+} from './NamePage';
+import EducationPage, {
+  EducationPageStore,
+  educationPageInitialStore,
+  educationPageSchema,
+} from './EducationPage';
+import PhonePage, {
+  PhonePageStore,
+  phonePageInitialStore,
+  phonePageSchema,
+} from './PhonePage';
 import { WizardForm } from '@basics';
 import { useUser } from '@hooks';
 import {
@@ -10,22 +27,33 @@ import {
   useShouldShowLogin,
 } from '@redux';
 
-type Store = Page1Store & Page2Store;
+type Store = NamePageStore &
+  EducationPageStore &
+  PhonePageStore &
+  Page1Store &
+  Page2Store;
 
-const schemas = [page1Schema, page2Schema];
+const schemas = [
+  namePageSchema,
+  educationPageSchema,
+  phonePageSchema,
+  page1Schema,
+  page2Schema,
+];
 
 const NewUserSetup: FunctionComponent = () => {
   const dispatch = useDispatch();
   const showNewUserPopup = useShowNewUserPopup();
   const shouldShowLogin = useShouldShowLogin();
   const { createUser } = useUser();
+  const [showQuit, setShowQuit] = useState(false);
 
   if (!showNewUserPopup) return null;
 
   return (
     <WizardForm<Store>
       show={!!showNewUserPopup && !shouldShowLogin}
-      onHide={() => console.log('todo, shouldnt have an onHide for this...')}
+      onHide={() => dispatch(endNewUserFlow())}
       onSubmit={(data) => {
         console.log('clicked, set up new user');
         console.log(data);
@@ -40,6 +68,16 @@ const NewUserSetup: FunctionComponent = () => {
       title="Set up your account"
       initialStore={[
         {
+          ...namePageInitialStore,
+          name: showNewUserPopup.name,
+        },
+        {
+          ...educationPageInitialStore,
+        },
+        {
+          ...phonePageInitialStore,
+        },
+        {
           ...page1InitialStore,
           name: showNewUserPopup.name,
           email: showNewUserPopup.email,
@@ -48,8 +86,10 @@ const NewUserSetup: FunctionComponent = () => {
       ]}
       schemas={schemas}
     >
-      <Page1 />
-      <Page2 />
+      <NamePage />
+      <EducationPage />
+      <PhonePage />
+
     </WizardForm>
   );
 };

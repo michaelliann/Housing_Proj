@@ -22,6 +22,9 @@ export * from './ImageDropdown';
 export { default as Input } from './Input';
 export * from './Input';
 
+export { default as InputLine } from './InputLine';
+export * from './InputLine';
+
 export { default as Map } from './Map';
 export * from './Map';
 

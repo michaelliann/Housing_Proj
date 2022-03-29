@@ -1,0 +1,91 @@
+.root {
+  // used only for specificity to override bootstrap css
+
+  // apply to direct child to make bootstrap form margin bottom 0
+  & > div {
+    margin-bottom: 0;
+  }
+  .unfilled {
+    height: 3rem;
+    padding-left: 2.75rem;
+    @include font-type('body 2');
+
+    border: none;
+
+    border-bottom: solid 4px #edb096;
+    outline: none;
+    border-radius: 0;
+    background-color: white !important;
+    &::placeholder {
+      color: $disabled-low-emphasis-color;
+    }
+    &:focus {
+      @include font-type('body 2');
+      &,
+      &::placeholder {
+        color: $black-color;
+      }
+    }
+  }
+
+  .filled {
+    @extend .unfilled;
+    border-color: $primary-light-color;
+  }
+
+  .isValid {
+    border-color: $secondary-300-color !important;
+    padding-right: 0;
+    background-image: none !important; // used to override bootstrap-provided valid checkmark
+  }
+  .invalid {
+    border-bottom: 3px solid $error-color !important;
+    color: $error-color !important;
+  }
+
+  .readOnly {
+    background-color: $primary-50-color !important;
+  }
+
+  .label {
+    @include font-type('subtitle 1');
+
+    color: $primary-dark-color;
+  }
+
+  .inlineText {
+    @include font-type('subtitle 1');
+
+    color: $primary-dark-color;
+    margin-left: 15px;
+    align-self: center;
+  }
+
+  .error {
+    @include font-type('caption');
+
+    color: $error-color;
+    position: absolute;
+  }
+}
+
+.inputRow {
+  position: relative;
+}
+
+.inputIcon {
+  z-index: 2;
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+
+  @include svg-fill($coral-400-color, 1.5rem, 1.5rem);
+}
+
+.inputStatus {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}

@@ -2,7 +2,7 @@ import React, { useState, FunctionComponent } from 'react';
 import { Form, FormControlProps } from 'react-bootstrap';
 import * as z from 'zod';
 import cn from 'classnames';
-import styles from './Input.module.scss';
+import styles from './InputLine.module.scss';
 import RequiredAsterisk from '../RequiredAsterisk';
 import { Icon as IconType, miscIcons } from '@icons';
 
@@ -24,7 +24,7 @@ export interface InputProps
   icon?: IconType;
 }
 
-const Input: FunctionComponent<InputProps> = ({
+const InputLine: FunctionComponent<InputProps> = ({
   label,
   labelClassName,
   error,
@@ -100,4 +100,4 @@ const Input: FunctionComponent<InputProps> = ({
   );
 };
 
-export default Input;
+export default InputLine;
