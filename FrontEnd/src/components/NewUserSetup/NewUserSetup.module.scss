@@ -1,18 +1,18 @@
 .schoolYearToggle {
-  justify-content: center !important;
-  padding-left: 0 !important;
+  justify-content: center;
+  padding-left: 0;
 }
 
 .textArea {
   textarea {
-    height: 19.0625rem !important;
+    height: 19.0625rem;
   }
 }
 
 .nameAsk {
   position: relative;
   align-self: center;
-  margin-top: 8%;
+  margin-top: 15px;
   padding-bottom: 151px;
   color: $primary-400-color;
 
@@ -20,7 +20,7 @@
 }
 .nameAskEducation {
   align-self: center;
-  margin-top: 5%;
+  margin-top: 15px;
   color: $primary-400-color;
   padding-bottom: 20px;
   @include font-type('subtitle 1');
@@ -33,13 +33,13 @@
 }
 
 .phoneContainer {
-  background-color: F8E6D8;
+  background-color: #f8e6d8;
 }
 
 .phoneDisclaimer {
   position: absolute;
   left: 130px;
-  margin-left: -10%;
+  margin-left: -35px;
   @include font-type('subtitle 1');
   font-size: 16px;
   padding-bottom: 20px;
@@ -50,15 +50,15 @@
 
 .phoneAsk {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 15px;
   color: $primary-400-color;
   padding-bottom: 20px;
+  
   @include font-type('subtitle 1');
 }
 .phoneWrapper {
   padding-left: 100px;
   margin-top: 190px;
-
   position: relative;
   height: 60px;
   width: 650px;

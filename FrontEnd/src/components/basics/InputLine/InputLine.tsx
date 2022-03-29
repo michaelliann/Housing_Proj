@@ -24,7 +24,7 @@ export interface InputProps
   icon?: IconType;
 }
 
-const Input: FunctionComponent<InputProps> = ({
+const InputLine: FunctionComponent<InputProps> = ({
   label,
   labelClassName,
   error,
@@ -100,4 +100,4 @@ const Input: FunctionComponent<InputProps> = ({
   );
 };
 
-export default Input;
+export default InputLine;
