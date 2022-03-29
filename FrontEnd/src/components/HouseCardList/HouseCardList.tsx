@@ -29,9 +29,7 @@ const HouseCardListUI: FunctionComponent<HouseCardListUIProps> = ({
     <Container fluid className="px-md-0">
       <Row className={styles.cardRow}>
         {roomIds.map((roomId) => (
-
           <Col xs={12} lg={6} className={styles.cardColumn}>
-
             <HouseCard roomId={roomId} />
           </Col>
         ))}
@@ -80,10 +78,7 @@ export const BrowsingStudentList: FunctionComponent<BrowsingListProps> = ({
   );
 };
 
-
-const BrowsingList: FunctionComponent<{
-
-
+const HouseCardList: FunctionComponent<{
   postType: PostingType;
   numListingsShown?: number;
 }> = ({ postType, numListingsShown }) => {
@@ -98,4 +93,4 @@ const BrowsingList: FunctionComponent<{
   );
 };
 
-export default BrowsingList;
+export default HouseCardList;
