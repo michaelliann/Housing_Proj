@@ -3,6 +3,7 @@ $wizard-form-height: 42.5rem;
 $wizard-form-max-height: 90vh;
 $top-bar-height: 3.75rem;
 $bottom-bar-height: 5rem;
+
 $middle-height: calc(
   #{$wizard-form-height} - #{$top-bar-height} - #{$bottom-bar-height}
 );
@@ -47,6 +48,7 @@ $middle-max-height: calc(
   }
 
   .middle {
+    background-color: $background-color;
     width: 100%;
     height: $middle-height;
     max-height: $middle-max-height;
@@ -65,6 +67,7 @@ $middle-max-height: calc(
   }
 
   .bottomBar {
+    background-color: $background-color;
     width: 100%;
     height: $bottom-bar-height;
     display: flex;
