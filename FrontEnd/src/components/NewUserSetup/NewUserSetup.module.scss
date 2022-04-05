@@ -4,8 +4,10 @@
 }
 
 .textArea {
+  
   textarea {
-    height: 19.0625rem;
+    
+    height: 19.0625rem !important;
   }
 }
 
@@ -75,3 +77,13 @@
   padding-right: 0.5rem;
   float: left;
 }
+
+.bioAsk {
+  text-align: center;
+  margin-top: 15px;
+  color: $primary-400-color;
+  padding-bottom: 20px;
+  @include font-type('subtitle 1');
+}
+
+

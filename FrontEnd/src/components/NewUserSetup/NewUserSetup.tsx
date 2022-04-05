@@ -59,9 +59,11 @@ const NewUserSetup: FunctionComponent = () => {
         console.log(data);
 
         // Currently no way for users to select a profile photo. the backend will pick one at random.
+        /*
         createUser({ ...data, profilePhoto: '' }).then(() =>
           dispatch(endNewUserFlow()),
         );
+        */
 
         return true;
       }}
