@@ -31,7 +31,9 @@ const PostPage2: FunctionComponent<WizardFormStep<Page2Store>> = ({
         placeHolder=" What are you up to later? &#13;
         What do you like to do for fun? &#13;&#10;
         The more personal it be, the more likely you will find someone who click!"
-        onChange={(e) => setStore({ description: e.target.value })}
+        onChange={(e) => {
+          setStore({ description: e.target.value });
+        }}
         isValid={validations?.description?.success}
         error={validations?.description?.error}
         maxLength={300}
