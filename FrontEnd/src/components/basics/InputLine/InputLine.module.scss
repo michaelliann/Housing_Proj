@@ -21,7 +21,6 @@
     }
     &:focus {
       @include font-type('body 2');
-      //border-color: $primary-light-color;
       &,
       &::placeholder {
         color: $black-color;

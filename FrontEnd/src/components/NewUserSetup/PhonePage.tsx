@@ -4,13 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import * as z from 'zod';
 import { SchoolYear, NON_EMPTY_ERR_MSG, majors, phoneRegex } from '@constants';
-import {
-  WizardFormStep,
-  InputLine,
-  Dropdown,
-  ToggleGroup,
-  Tooltip,
-} from '@basics';
+import { WizardFormStep, InputLine, Dropdown, ToggleGroup } from '@basics';
 import styles from './NewUserSetup.module.scss';
 import { miscIcons } from '@icons';
 
@@ -69,6 +63,4 @@ const PhonePage: FunctionComponent<WizardFormStep<PhonePageStore>> = ({
   );
 };
 
-// NOTE: need the "as FunctionComponent" since typescript doesn't know that WizardForm parent component will
-// provide the WizardFormStep props
 export default PhonePage as FunctionComponent;

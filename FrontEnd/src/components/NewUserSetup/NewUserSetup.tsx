@@ -62,7 +62,7 @@ const NewUserSetup: FunctionComponent = () => {
         createUser({ ...data, profilePhoto: '' }).then(() =>
           dispatch(endNewUserFlow()),
         );
-
+    
         return true;
       }}
       title="Set up your account"
@@ -77,11 +77,6 @@ const NewUserSetup: FunctionComponent = () => {
         {
           ...phonePageInitialStore,
         },
-        {
-          ...page1InitialStore,
-          name: showNewUserPopup.name,
-          email: showNewUserPopup.email,
-        },
         page2InitialStore,
       ]}
       schemas={schemas}
@@ -89,7 +84,7 @@ const NewUserSetup: FunctionComponent = () => {
       <NamePage />
       <EducationPage />
       <PhonePage />
-
+      <Page2 />
     </WizardForm>
   );
 };

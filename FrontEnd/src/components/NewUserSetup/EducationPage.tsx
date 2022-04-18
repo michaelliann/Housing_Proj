@@ -70,6 +70,4 @@ const EducationPage: FunctionComponent<WizardFormStep<EducationPageStore>> = ({
   );
 };
 
-// NOTE: need the "as FunctionComponent" since typescript doesn't know that WizardForm parent component will
-// provide the WizardFormStep props
 export default EducationPage as FunctionComponent;
