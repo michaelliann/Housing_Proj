@@ -6,7 +6,7 @@ import styles from './InputLine.module.scss';
 import RequiredAsterisk from '../RequiredAsterisk';
 import { Icon as IconType, miscIcons } from '@icons';
 
-export interface InputProps
+export interface InputLineProps
   extends FormControlProps,
     // Omits the default onChange method from the React HTML element that this extends.
     Omit<
@@ -24,7 +24,7 @@ export interface InputProps
   icon?: IconType;
 }
 
-const InputLine: FunctionComponent<InputProps> = ({
+const InputLine: FunctionComponent<InputLineProps> = ({
   label,
   labelClassName,
   error,

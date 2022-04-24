@@ -41,7 +41,7 @@ const LookingFor: FunctionComponent<LookingFor> = ({
             <Chip
               state={'default'}
               text={gender}
-              dismiss={false}
+              shouldDismiss={false}
               icon={
                 IconKeys.includes(gender)
                   ? LookingForIconMap[gender]
@@ -62,7 +62,7 @@ const LookingFor: FunctionComponent<LookingFor> = ({
             <Chip
               state={'default'}
               text={habit}
-              dismiss={false}
+              shouldDismiss={false}
               icon={
                 IconKeys.includes(habit) ? LookingForIconMap[habit] : undefined
               }

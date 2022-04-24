@@ -30,7 +30,7 @@ export const getDuration = async (
       (response, status) => {
         if (status === google.maps.DistanceMatrixStatus.OK) {
           // check the resulting element for success or failure
-          const result = response.rows[0].elements[0];
+          const result = (response as google.maps.DistanceMatrixResponse).rows[0].elements[0];
           const Statuses = google.maps.DistanceMatrixElementStatus;
 
           if (result.status === Statuses.OK) {

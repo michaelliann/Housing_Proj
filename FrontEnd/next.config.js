@@ -25,7 +25,11 @@ module.exports = withPlugins(
     ],
   ],
   {
-    webpack5: false,
+    eslint: {
+      // Warning: This allows production builds to successfully complete even if
+      // your project has ESLint errors.
+      ignoreDuringBuilds: true,
+    },
     sassOptions: {
       // include the path to the scss folder for easy access (it allows you to do things like
       // "@import 'utils'" without having to specify the path)
@@ -33,6 +37,12 @@ module.exports = withPlugins(
       // Prepend the following line to every scss file (no need to import to use sass
       // variables and other utils in every file)
       prependData: `@use 'utils' as *;`,
+    },
+    images: {
+      disableStaticImages: true,
+    },
+    experimental: {
+      outputStandalone: true,
     },
     webpack: (config, options) => {
       // Consume SVG files for webpack
