@@ -4,9 +4,7 @@
 }
 
 .textArea {
-  
   textarea {
-    
     height: 19.0625rem !important;
   }
 }
@@ -55,7 +53,7 @@
   margin-top: 15px;
   color: $primary-400-color;
   padding-bottom: 20px;
-  
+
   @include font-type('subtitle 1');
 }
 .phoneWrapper {
@@ -64,13 +62,6 @@
   position: relative;
   height: 60px;
   width: 650px;
-}
-
-.nameInput {
-  position: relative;
-  align-items: center;
-  height: 60px;
-  width: 500px;
 }
 
 .infoIcon {
@@ -85,5 +76,3 @@
   padding-bottom: 20px;
   @include font-type('subtitle 1');
 }
-
-
