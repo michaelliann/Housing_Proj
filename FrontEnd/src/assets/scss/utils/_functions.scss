@@ -1,0 +1,7 @@
+/**
+ * STYLE GUIDE Spacing multiplication
+ */
+@function spacing($base, $multiplier) {
+  $result: $base * $multiplier;
+  @return $result;
+}
