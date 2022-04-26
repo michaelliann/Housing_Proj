@@ -1,10 +1,10 @@
-import { Button, ImageDropdown, Link, Subtitle2 } from '@basics';
-import { useUser } from '@hooks';
+import { Button, ImageDropdown } from '@basics';
+import useUser from '@hooks/swr/useUser';
 import { landingIcons, miscIcons } from '@icons';
 import { showLogin, showPost } from '@redux';
 import { useRouter } from 'next/router';
 import React, { FunctionComponent } from 'react';
-import { Row, Modal } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import { useDispatch } from 'react-redux';
 import styles from './NavBar.module.scss';
