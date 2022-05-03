@@ -1,28 +1,23 @@
 import React, { FunctionComponent } from 'react';
 import cn from 'classnames';
-import styles from './Footer.module.scss';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link, Subtitle2, Button } from '@basics';
+import { Link, Subtitle2 } from '@basics';
 import { miscIcons } from '@icons';
-// import { showLogin } from '@redux';
-// import { useDispatch } from 'react-redux';
+import styles from './Footer.module.scss';
 
-const FirstColumn: FunctionComponent = () => {
-  return (
-    <div className={styles.marginBottomProvider}>
-      <Link href="/housing" undecorated className={styles.footerLogoWrapper}>
-        <miscIcons.newLogo className={styles.logo} />
-      </Link>
-      <div className={styles.logoTextWrap}>
-        <div className={styles.logoText}>By Students</div>
-        <div className={styles.logoText}>For Students</div>
-        <div className={styles.logoText}>With Students</div>
-      </div>
+const FirstColumn: FunctionComponent = () => (
+  <div className={styles.marginBottomProvider}>
+    <Link href="/housing" undecorated className={styles.footerLogoWrapper}>
+      <miscIcons.newLogo className={styles.logo} />
+    </Link>
+    <div className={styles.logoTextWrap}>
+      <div className={styles.logoText}>By Students</div>
+      <div className={styles.logoText}>For Students</div>
+      <div className={styles.logoText}>With Students</div>
     </div>
-  );
-};
+  </div>
+);
 
 const homehubEmail = 'homehubdope@gmail.com';
 

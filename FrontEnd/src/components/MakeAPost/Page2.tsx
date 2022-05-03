@@ -112,7 +112,7 @@ const Page2: FunctionComponent<WizardFormStep<Page2Store>> = ({
       <h5 className={styles.title}>
         What kind of room is this? <RequiredAsterisk />{' '}
         <span className={styles.inline}>
-          <Tooltip isSingleLine={false} title={roomTypeInfo} maxWidth={600} />
+          <Tooltip isSingleLine={false} title={roomTypeInfo}/>
         </span>
       </h5>
       <RadioGroup

@@ -1,8 +1,6 @@
 export { default as AboutPage } from './AboutPage';
-export * from './AboutPage';
 
 export { default as Footer } from './Footer';
-export * from './Footer';
 
 export { default as HouseBrowsing } from './HouseBrowsing';
 export * from './HouseBrowsing';

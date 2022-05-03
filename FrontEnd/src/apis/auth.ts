@@ -1,6 +1,7 @@
 import { User } from '@models';
-import { backendAPI } from './apiBases';
 import { formatWithAws } from '@utils';
+import { backendAPI } from './apiBases';
+
 export type UserLoginResponse = User | { newUser: boolean };
 
 // potential new user
@@ -30,15 +31,8 @@ export const login = async (
     if (isNewUser) return { isNewUser, unsupportedDomain: false };
     // Typescript can't tell that data must be of type User here, so explicitly tell it
     const data = response.data as User;
-    const {
-      profilePhoto,
-      description,
-      major,
-      schoolYear,
-      phone,
-      name,
-      email,
-    } = data;
+    const { profilePhoto, description, major, schoolYear, phone, name, email } =
+      data;
 
     return {
       isNewUser,
@@ -73,7 +67,7 @@ export const logout = async () => {
  */
 export const updateUser = async (updates: Partial<User>) => {
   const response = await backendAPI.post('/profile', {
-    updates: updates,
+    updates,
   });
 
   return response.data;
@@ -123,6 +117,6 @@ export const getCurUser = async () => {
  * @returns - void
  */
 export const sendEmail = async (content: string) => {
-  const response = await backendAPI.post('/sendEmail', { content: content });
+  const response = await backendAPI.post('/sendEmail', { content });
   return response.data;
 };

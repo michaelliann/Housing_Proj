@@ -15,19 +15,27 @@ const useRoomBookmarks = () => {
     },
   );
 
-  const addBookmark = (roomId: number) => {
-    const success = addBookmarkAPI(roomId);
-    if (success && data) {
-      const mergedBookmarks = [...data, roomId];
-      mutate(mergedBookmarks, false);
+  const addBookmark = async (roomId: number) => {
+    try {
+      await addBookmarkAPI(roomId);
+      if (data) {
+        const mergedBookmarks = [...data, roomId];
+        mutate(mergedBookmarks, false);
+      }
+    } catch (e) {
+      console.error(e);
     }
   };
 
-  const removeBookmark = (roomId: number) => {
-    const success = removeBookmarkAPI(roomId);
-    if (success && data) {
-      const unremovedBookmarks = data.filter((r) => r !== roomId);
-      mutate(unremovedBookmarks, false);
+  const removeBookmark = async (roomId: number) => {
+    try {
+      await removeBookmarkAPI(roomId);
+      if (data) {
+        const unremovedBookmarks = data.filter((r) => r !== roomId);
+        mutate(unremovedBookmarks, false);
+      }
+    } catch (e) {
+      console.error(e);
     }
   };
 

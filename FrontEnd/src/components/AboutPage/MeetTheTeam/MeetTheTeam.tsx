@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
 import styles from './MeetTheTeam.module.scss';
 import MemberInfoCard from './MemberInfoCard/MemberInfoCard';
 import memberCards from './TeamMemberInfo';

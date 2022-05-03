@@ -40,12 +40,10 @@ export const { showPost, hidePost, setShowPostType } = postSlice.actions;
 /**
  * Exporting select hooks for this slice.
  */
-export const useShouldShowPost = () => {
-  return useSelector((state) => state.post.shouldShowPost);
-};
+export const useShouldShowPost = () =>
+  useSelector((state) => state.post.shouldShowPost);
 
-export const useShowPostType = () => {
-  return useSelector((state) => state.post.showPostType);
-};
+export const useShowPostType = () =>
+  useSelector((state) => state.post.showPostType);
 
 export default postSlice.reducer;

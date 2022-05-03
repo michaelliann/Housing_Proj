@@ -33,7 +33,9 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   initialSelected,
   placeholder,
   isInvalid,
-  isValid, // only provide this if you want a green checkmark. Should only be provided when multiple dropdowns are working in unison
+  // only provide this if you want a green checkmark.
+  // Should only be provided when multiple dropdowns are working in unison
+  isValid,
   required,
   noFilter,
   inlineText,
@@ -128,7 +130,8 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
               </div>
             </BootstrapDropdown.Toggle>
 
-            {/* styles won't work unless you specify it explicitly aka: bootstrap style cannot be overriden by just adding a div with the same name */}
+            {/* styles won't work unless you specify it explicitly aka:
+            bootstrap style cannot be overriden by just adding a div with the same name */}
             <BootstrapDropdown.Menu
               ref={dropdownMenuRef}
               className={styles.dropdownMenu}

@@ -2,7 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import Header from './Header';
 import { Head, ToggleSwitchBar } from '@basics';
 import { HouseCardList } from '@components';
-import { useShowPostType, setShowPostType } from '@redux';
+import {useShowPostType, setShowPostType} from '@redux/slices/post';
 import { useDispatch } from 'react-redux';
 
 const Housing: FunctionComponent = () => {

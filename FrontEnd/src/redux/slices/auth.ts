@@ -82,20 +82,15 @@ export const {
 /**
  * Exporting select hooks for this slice.
  */
-export const useShouldShowLogin = () => {
-  return useSelector((state) => state.auth.shouldShowLogin);
-};
-export const useShowNewUserPopup = () => {
-  return useSelector((state) => state.auth.showNewUserPopup);
-};
-export const useShowUnsupportedDomainPopup = () => {
-  return useSelector((state) => state.auth.shouldShowDomainPopup);
-};
-export const useShowReportIssue = () => {
-  return useSelector((state) => state.auth.shouldShowReportIssue);
-};
-export const useShowEmailConfirmation = () => {
-  return useSelector((state) => state.auth.shouldShowEmailConfirmation);
-};
+export const useShouldShowLogin = () =>
+  useSelector((state) => state.auth.shouldShowLogin);
+export const useShowNewUserPopup = () =>
+  useSelector((state) => state.auth.showNewUserPopup);
+export const useShowUnsupportedDomainPopup = () =>
+  useSelector((state) => state.auth.shouldShowDomainPopup);
+export const useShowReportIssue = () =>
+  useSelector((state) => state.auth.shouldShowReportIssue);
+export const useShowEmailConfirmation = () =>
+  useSelector((state) => state.auth.shouldShowEmailConfirmation);
 
 export default authSlice.reducer;

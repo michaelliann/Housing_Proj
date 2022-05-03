@@ -89,7 +89,6 @@ const Page4: FunctionComponent<WizardFormStep<Page4Store>> = ({
         title={utilityInfo}
         className={styles.marginTop}
         placement="bottom-start"
-        maxWidth={450}
       >
         <div>What does “utilities” mean?</div>
       </Tooltip>
