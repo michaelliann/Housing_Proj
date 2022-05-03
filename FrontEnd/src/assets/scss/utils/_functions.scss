@@ -1,7 +1,6 @@
 /**
  * STYLE GUIDE Spacing multiplication
  */
-@function spacing($base, $multiplier) {
-  $result: $base * $multiplier;
-  @return $result;
+@function spacing($base) {
+  @return math.div($base, 100);
 }
