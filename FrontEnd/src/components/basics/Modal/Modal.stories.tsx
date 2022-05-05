@@ -38,7 +38,7 @@ const ModalTemplate = StoryTemplate<
 >(ModalDemo);
 
 export const ModalExample = FailurePopUp.bind({});
-
+/*
 ModalExample.args = {
   onClose: () => console.log('Clicked!'),
   open: true,
@@ -47,3 +47,4 @@ ModalExample.args = {
     alt: 'Congrats',
   },
 };
+*/

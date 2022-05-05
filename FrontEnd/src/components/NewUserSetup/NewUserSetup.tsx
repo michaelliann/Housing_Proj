@@ -81,11 +81,6 @@ const NewUserSetup: FunctionComponent = () => {
         {
           ...phonePageInitialStore,
         },
-        {
-          ...page1InitialStore,
-          name: showNewUserPopup.name,
-          email: showNewUserPopup.email,
-        },
         bioPageInitialStore,
       ]}
       schemas={schemas}
