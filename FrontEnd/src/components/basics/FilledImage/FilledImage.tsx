@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import styles from './FilledImage.module.scss';
 import cn from 'classnames';
+import styles from './FilledImage.module.scss';
 
 interface FilledImageProps
   extends React.DetailedHTMLProps<

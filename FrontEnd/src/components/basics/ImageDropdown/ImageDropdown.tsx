@@ -33,7 +33,9 @@ const ImageDropdown: FunctionComponent<ImageDropdownProps> = ({
     </BootstrapDropdown.Toggle>
     {/* TODO might need to make the menu a basic  component itself */}
     <BootstrapDropdown.Menu className={styles.dropdownMenu} align="right">
-      {items.map(({ href, label, labelClassName, onClick, selected }) => (
+      {items.map(({
+        href, label, labelClassName, onClick, selected,
+      }) => (
         <BootstrapDropdown.Item
           href={href}
           className={styles.dropdownItem}
