@@ -21,6 +21,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,500,80"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700"
+            rel="stylesheet"
+          />
           <meta charSet="utf-8" />
           <link rel="icon" href="/favicon.ico" />
           <meta name="theme-color" content="#000000" />

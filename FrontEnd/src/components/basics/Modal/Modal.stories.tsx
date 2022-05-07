@@ -38,6 +38,8 @@ const ModalTemplate = StoryTemplate<
 >(ModalDemo);
 
 export const ModalExample = FailurePopUp.bind({});
+
+//commented out for type allignment but kept here for clarity
 /*
 ModalExample.args = {
   onClose: () => console.log('Clicked!'),
